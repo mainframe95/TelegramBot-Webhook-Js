@@ -1,19 +1,28 @@
 {
-  "name": "TelegramBotTest-1",
+  "name": "telegrambot-webhook-js",
   "version": "1.0.0",
-  "description": "",
+  "description": "telegram bot with express",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mainframe95/TelegramBot-Webhook-Js.git"
+  },
+  "author": "mainframe95",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mainframe95/TelegramBot-Webhook-Js/issues"
+  },
+  "homepage": "https://github.com/mainframe95/TelegramBot-Webhook-Js#readme",
   "dependencies": {
-    "daemon": "^1.1.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "node-telegram-bot-api": "^0.54.0",
     "telegraf": "^4.4.1",
     "telegraf-inline-menu": "^6.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }

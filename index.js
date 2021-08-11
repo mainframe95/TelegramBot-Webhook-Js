@@ -1,22 +1,12 @@
-const {Telegraf} = require('telegraf')
-const {MenuTemplate, MenuMiddleware} = require('telegraf-inline-menu')
-// interface MyContext extends TelegrafContext {
-// 	readonly match: RegExpExecArray | undefined;
-// }
+var express = require('express');
+var app = express();
+require('./bot');
 
-const menuTemplate = new MenuTemplate(ctx => `Hey ${ctx.from.first_name}!`)
-
-menuTemplate.interact('I am excited!', 'a', {
-	do: async ctx => {
-		await ctx.reply('As am I!')
-		return false
-	}
+// respond with "hello world" when a GET request is made to the homepage
+app.get('/', (req, res) => {
+    res.send(process.env.BOT_TOKEN);
 })
 
-const bot = new Telegraf(process.env['BOT_KEY'])
-
-const menuMiddleware = new MenuMiddleware('/', menuTemplate)
-bot.command('start', ctx => menuMiddleware.replyToContext(ctx))
-bot.use(menuMiddleware)
-
-bot.launch()
+app.listen(3000, () => {
+    console.log('start with nodemon');
+})
